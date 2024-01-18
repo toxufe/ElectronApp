@@ -14,6 +14,8 @@ app.whenReady().then(async () => {
         }
     })
 
+    // win.webContents.openDevTools() // 打开开发者工具
+
     // 根据命令行参数加载URL或本地文件
     if (process.argv[2]) {
         win.loadURL(process.argv[2])

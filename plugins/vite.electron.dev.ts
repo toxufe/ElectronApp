@@ -32,6 +32,8 @@ export const viteElectronDev = (): Plugin => {
                 const addressInfo = server?.httpServer?.address() as AddressInfo
                 const IP = `http://localhost:${addressInfo.port}`
                 // 启动Electron进程
+                // require 返回的是路径
+                // electron 不认识ts文件，所以需要编译成js文件
                 let electronProcess = spawn(require('electron'), ['dist/background.js', IP])
 
                 // 监听主进程代码的更改

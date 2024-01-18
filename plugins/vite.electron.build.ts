@@ -33,7 +33,7 @@ export const viteElectronBuild = (): Plugin => {
             fs.writeSync(fs.openSync('dist/package.json', 'w'), JSON.stringify(json, null, 2))
 
             // 创建一个空的node_modules目录 不然会打包失败
-            fs.mkdirSync(path.join(process.cwd(), "dist/node_modules"));
+            // fs.mkdirSync(path.join(process.cwd(), "dist/node_modules"));
 
             // 使用electron-builder打包Electron应用程序
             electronBuilder.build({
@@ -47,6 +47,7 @@ export const viteElectronBuild = (): Plugin => {
                     asar: true,
                     nsis: {
                         oneClick: false, //取消一键安装
+                        allowToChangeInstallationDirectory: true, //允许用户选择安装目录
                     }
                 }
             })

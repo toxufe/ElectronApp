@@ -5,7 +5,7 @@ const test = ()=>{
 </script>
 
 <template>
-  <button @click="test">按钮</button>
+  <button @click="test">按钮1111111111111</button>
 </template>
 
 <style scoped>
